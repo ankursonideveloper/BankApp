@@ -7,6 +7,9 @@ const UserSchema = new mongoose.Schema({
   email: String,
   password: String,
   balance: Number,
+  isVerified: { type: Boolean, default: false },
+  verificationToken: String,
+  verificationTokenExpires: Date,
 });
 
 UserSchema.pre("save", function (next) {
